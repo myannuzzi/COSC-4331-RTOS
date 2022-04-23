@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -22,7 +23,12 @@ int main(){
     //Create a vector of task structs
     vector<task> taskSet;
     //Read in data file
-
+    ifstream fp("input.txt");
+    string line;
+    while(getline(fp, line)){
+        cout << line << endl;
+    }
+    
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
         cout << "Simulation step: " << i << endl;

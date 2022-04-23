@@ -43,8 +43,8 @@ int main(){
         cout << sub << endl;
         //Remove the brackets
         //Tokenize by space
-        sub.erase(remove(sub.begin(), sub.end(). '['). sun.end());
-        sub.erase(remove(sub.begin(), sub.end(). ']'). sun.end());
+        sub.erase(remove(sub.begin(), sub.end(), '['). sun.end());
+        sub.erase(remove(sub.begin(), sub.end(), ']'). sun.end());
         cout << sub << endl;
     }
 

@@ -47,7 +47,7 @@ int main(){
         sub.pop_back();
         cout << sub << endl;
         int arrival, comp, dead;
-        istringstream ss(sub);
+        stringstream ss(sub);
         string token;
         while(ss >> token){
             cout << "Value is: " << token << endl;

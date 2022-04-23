@@ -41,9 +41,11 @@ int main(){
         //Grab the []
         sub = line.substr(line.find("["), line.find("]"));
         cout << sub << endl;
-        //Tokenize by space
         //Remove the brackets
-        
+        //Tokenize by space
+        sub.erase(remove(sub.begin(), sub.end(). '['). sun.end());
+        sub.erase(remove(sub.begin(), sub.end(). ']'). sun.end());
+        cout << sub << endl;
     }
 
     //Run loop for 200 iterations

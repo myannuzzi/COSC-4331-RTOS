@@ -36,7 +36,9 @@ int main(){
         //Parse the line and turn it into a struct
         //Grab the task number
         string sub = line.substr(line.find("k ") + 1);
+        task t;
         int currentTaskNum = stoi(sub);
+        t.taskID = currentTaskNum;
         cout << "The current task number is: " << currentTaskNum << endl;
         //Grab the []
         sub = line.substr(line.find("["), line.find("]"));
@@ -46,12 +48,26 @@ int main(){
         sub.erase(0,1);
         sub.pop_back();
         cout << sub << endl;
-        int arrival, comp, dead;
         stringstream ss(sub);
         string token;
+        vector<int> vals;
         while(ss >> token){
             cout << "Value is: " << token << endl;
+            vals.push_back(int(token));
         }
+        t.a = vals[0];
+        t.c = vals[1];
+        t.d = vals[2];
+        taskSet.push_back(t);
+    }
+
+    //Print out the task set
+    for(int i=0;i<taskSet.size();i++){
+        cout << "Task info: " << endl;
+        cout << "Id: " << taskSet[i].taskID << endl;
+        cout << "a: " << taskSet[i].a << endl;
+        cout << "c: " << taskSet[i].c << endl;
+        cout << "d: " << taskSet[i].d << endl; 
     }
 
     //Run loop for 200 iterations

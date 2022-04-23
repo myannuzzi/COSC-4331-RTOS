@@ -6,6 +6,8 @@
 #include <vector>
 #include <fstream>
 #include <sstream>
+#include <algorithm>
+
 using namespace std;
 
 //Sporadic task struct
@@ -17,6 +19,11 @@ struct task{
     int c;
     int d;
 };
+
+//Compare two tasks by their arrival time for sorting
+bool compareByArrivalTime(const task &a, const task &b){
+    return a.a < b.a;
+}
 
 int main(){
     cout << "Running sts program..." << endl;
@@ -39,7 +46,7 @@ int main(){
         task t;
         int currentTaskNum = stoi(sub);
         t.taskID = currentTaskNum;
-        cout << "The current task number is: " << currentTaskNum << endl;
+        //cout << "The current task number is: " << currentTaskNum << endl;
         //Grab the []
         sub = line.substr(line.find("["), line.find("]"));
         //cout << sub << endl;
@@ -47,12 +54,12 @@ int main(){
         //Tokenize by space
         sub.erase(0,1);
         sub.pop_back();
-        cout << sub << endl;
+        //cout << sub << endl;
         stringstream ss(sub);
         string token;
         vector<int> vals;
         while(ss >> token){
-            cout << "Value is: " << token << endl;
+            //cout << "Value is: " << token << endl;
             vals.push_back(stoi(token));
         }
         t.a = vals[0];
@@ -69,12 +76,23 @@ int main(){
         cout << "c: " << taskSet[i].c << endl;
         cout << "d: " << taskSet[i].d << endl; 
     }
-
+    //Sort the task list
+    sort(taskSet.begin(), taskSet.end(), compareByArrivalTime);
+    //Print out the task set
+    for(int i=0;i<taskSet.size();i++){
+        cout << "Task info: " << endl;
+        cout << "Id: " << taskSet[i].taskID << endl;
+        cout << "a: " << taskSet[i].a << endl;
+        cout << "c: " << taskSet[i].c << endl;
+        cout << "d: " << taskSet[i].d << endl; 
+    }
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
         //cout << "Simulation step: " << i << endl;
+
     }
     cout << "Program finished. Printing out results..." << endl;
     //Print out results
     
 }
+

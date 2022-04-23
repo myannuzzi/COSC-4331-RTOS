@@ -28,13 +28,13 @@ int main(){
     //Grab the number of tasks
     getline(fp, line);
     string sub = line.substr(line.find(":") + 1);
-    cout << sub << endl;
+    //cout << sub << endl;
     int taskNum = stoi(sub);
-    cout << taskNum << endl;
+    cout << "Number of tasks is: " << taskNum << endl;
     while(getline(fp, line)){
         cout << line << endl;
         //Parse the line and turn it into a struct
-
+        
     }
 
     //Run loop for 200 iterations

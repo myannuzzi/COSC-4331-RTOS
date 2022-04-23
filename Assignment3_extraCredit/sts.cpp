@@ -25,10 +25,16 @@ int main(){
     //Read in data file
     ifstream fp("input.txt");
     string line;
+    //Grab the number of tasks
+    getline(fp, line);
+    string sub = line.substr(line.find(": ") + 1);
+    cout << sub << endl;
     while(getline(fp, line)){
         cout << line << endl;
+        //Parse the line and turn it into a struct
+
     }
-    
+
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
         cout << "Simulation step: " << i << endl;

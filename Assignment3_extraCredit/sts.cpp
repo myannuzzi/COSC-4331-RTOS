@@ -15,12 +15,12 @@ struct {
     int a;
     int c;
     int d;
-} task;
+}task;
 
 int main(){
     cout << "Running sts program..." << endl;
     //Create a vector of task structs
-    vector<task> taskSet;
+    vector<int> taskSet;
     //Read in data file
 
     //Run loop for 200 iterations

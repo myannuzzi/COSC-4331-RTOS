@@ -27,7 +27,7 @@ int main(){
     string line;
     //Grab the number of tasks
     getline(fp, line);
-    string sub = line.substr(line.find(": ") + 1);
+    string sub = line.substr(line.find(":") + 1);
     cout << sub << endl;
     while(getline(fp, line)){
         cout << line << endl;

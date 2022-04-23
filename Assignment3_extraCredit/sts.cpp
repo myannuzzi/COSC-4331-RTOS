@@ -53,7 +53,7 @@ int main(){
         vector<int> vals;
         while(ss >> token){
             cout << "Value is: " << token << endl;
-            vals.push_back(int(token));
+            vals.push_back(stoi(token));
         }
         t.a = vals[0];
         t.c = vals[1];

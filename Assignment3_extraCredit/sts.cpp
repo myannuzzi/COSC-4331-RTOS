@@ -29,6 +29,8 @@ int main(){
     getline(fp, line);
     string sub = line.substr(line.find(":") + 1);
     cout << sub << endl;
+    int taskNum = stoi(sub);
+    cout << taskNum << endl;
     while(getline(fp, line)){
         cout << line << endl;
         //Parse the line and turn it into a struct

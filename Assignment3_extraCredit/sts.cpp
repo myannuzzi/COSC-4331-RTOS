@@ -87,7 +87,8 @@ int main(){
     //     cout << "d: " << taskSet[i].d << endl; 
     // }
     //Run loop for 200 iterations
-    for(int i=0;i<200;i++){
+    int i=0;
+    while(i<200){
         cout << "Simulation step: " << i << endl;
         //Check if a task is ready
         for(int j=0;i<taskSet.size();j++){
@@ -95,6 +96,7 @@ int main(){
                 cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
             }
         }
+        i++;
     }
     cout << "Program finished. Printing out results..." << endl;
     //Print out results

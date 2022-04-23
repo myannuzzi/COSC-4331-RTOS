@@ -39,8 +39,9 @@ int main(){
         int currentTaskNum = stoi(sub);
         cout << "The current task number is: " << currentTaskNum << endl;
         //Grab the []
-        sub = line.substr(line.find("["), line.find("]"));
+        sub = line.substr(line.find("["+1), line.find("]")-1);
         cout << sub << endl;
+        //Tokenize by space
     }
 
     //Run loop for 200 iterations

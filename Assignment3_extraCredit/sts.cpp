@@ -40,18 +40,23 @@ int main(){
         cout << "The current task number is: " << currentTaskNum << endl;
         //Grab the []
         sub = line.substr(line.find("["), line.find("]"));
-        cout << sub << endl;
+        //cout << sub << endl;
         //Remove the brackets
         //Tokenize by space
-        //sub.erase(0,1);
-        sub.pop_front();
+        sub.erase(0,1);
         sub.pop_back();
         cout << sub << endl;
+        int arrival, comp, dead;
+        istringstream ss(sub);
+        string token;
+        while(ss >> token){
+            cout << "Value is: " << token << endl;
+        }
     }
 
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
-        cout << "Simulation step: " << i << endl;
+        //cout << "Simulation step: " << i << endl;
     }
     cout << "Program finished. Printing out results..." << endl;
     //Print out results

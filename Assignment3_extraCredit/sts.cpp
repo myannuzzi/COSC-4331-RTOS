@@ -38,6 +38,9 @@ int main(){
         string sub = line.substr(line.find("k ") + 1);
         int currentTaskNum = stoi(sub);
         cout << "The current task number is: " << currentTaskNum << endl;
+        //Grab the []
+        sub = line.substr(line.find("["), line.find("]"));
+        cout << sub << endl;
     }
 
     //Run loop for 200 iterations

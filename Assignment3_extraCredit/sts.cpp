@@ -42,6 +42,8 @@ int main(){
         sub = line.substr(line.find("["), line.find("]"));
         cout << sub << endl;
         //Tokenize by space
+        //Remove the brackets
+        
     }
 
     //Run loop for 200 iterations

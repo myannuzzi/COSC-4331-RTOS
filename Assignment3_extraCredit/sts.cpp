@@ -3,12 +3,24 @@
 //Written by Mike Yannuzzi
 
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
+//Sporadic task struct
+//A sporadic task is denoted by T = {a,c,d} where a is the arrival time, c is the computation time, and d is the deadline.
+//The trask struct below follows the same convention.
+struct {
+    int taskID;
+    int a;
+    int c;
+    int d;
+} task;
+
 int main(){
     cout << "Running sts program..." << endl;
-
+    //Create a vector of task structs
+    vector<task> taskSet;
     //Read in data file
 
     //Run loop for 200 iterations

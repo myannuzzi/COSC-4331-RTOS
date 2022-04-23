@@ -88,7 +88,7 @@ int main(){
     // }
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
-        //cout << "Simulation step: " << i << endl;
+        cout << "Simulation step: " << i << endl;
         //Check if a task is ready
         for(int j=0;i<taskSet.size();i++){
             if(taskSet[j].a == i){

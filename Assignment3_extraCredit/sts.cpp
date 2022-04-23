@@ -78,6 +78,7 @@ int main(){
     }
     //Sort the task list
     sort(taskSet.begin(), taskSet.end(), compareByArrivalTime);
+    cout << taskSet.size() << endl;
     //Print out the task set
     // for(int i=0;i<taskSet.size();i++){
     //     cout << "Task info: " << endl;

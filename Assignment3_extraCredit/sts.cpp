@@ -44,7 +44,6 @@ int main(){
         //Remove the brackets
         //Tokenize by space
         sub.erase(0,1);
-        sub.erase(remove(sub.begin(), sub.end(), ']'). sun.end());
         sub.pop_back();
         cout << sub << endl;
     }

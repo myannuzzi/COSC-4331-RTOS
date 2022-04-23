@@ -79,17 +79,22 @@ int main(){
     //Sort the task list
     sort(taskSet.begin(), taskSet.end(), compareByArrivalTime);
     //Print out the task set
-    for(int i=0;i<taskSet.size();i++){
-        cout << "Task info: " << endl;
-        cout << "Id: " << taskSet[i].taskID << endl;
-        cout << "a: " << taskSet[i].a << endl;
-        cout << "c: " << taskSet[i].c << endl;
-        cout << "d: " << taskSet[i].d << endl; 
-    }
+    // for(int i=0;i<taskSet.size();i++){
+    //     cout << "Task info: " << endl;
+    //     cout << "Id: " << taskSet[i].taskID << endl;
+    //     cout << "a: " << taskSet[i].a << endl;
+    //     cout << "c: " << taskSet[i].c << endl;
+    //     cout << "d: " << taskSet[i].d << endl; 
+    // }
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
         //cout << "Simulation step: " << i << endl;
-
+        //Check if a task is ready
+        for(int j=0;i<taskSet.size();i++){
+            if(taskSet[j].a == i){
+                cout << "TaskID: " << taskSet[j] << " has arrived!" << endl;
+            }
+        }
     }
     cout << "Program finished. Printing out results..." << endl;
     //Print out results

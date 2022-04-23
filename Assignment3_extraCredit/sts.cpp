@@ -35,7 +35,7 @@ int main(){
         cout << line << endl;
         //Parse the line and turn it into a struct
         //Grab the task number
-        string sub = line.substr(line.find(":") + 1);
+        string sub = line.substr(line.find("k ") + 1);
         int currentTaskNum = stoi(sub);
         cout << "The current task number is: " << currentTaskNum << endl;
     }

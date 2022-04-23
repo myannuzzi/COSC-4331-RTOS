@@ -43,7 +43,8 @@ int main(){
         cout << sub << endl;
         //Remove the brackets
         //Tokenize by space
-        sub.erase(0,1);
+        //sub.erase(0,1);
+        sub.pop_front();
         sub.pop_back();
         cout << sub << endl;
     }

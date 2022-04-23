@@ -91,11 +91,11 @@ int main(){
     while(i<200){
         cout << "Simulation step: " << i << endl;
         //Check if a task is ready
-        for(int j=0;i<taskSet.size();j++){
-            if(taskSet[j].a == i){
-                cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
-            }
-        }
+        // for(int j=0;i<taskSet.size();j++){
+        //     if(taskSet[j].a == i){
+        //         cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
+        //     }
+        // }
         i++;
     }
     cout << "Program finished. Printing out results..." << endl;

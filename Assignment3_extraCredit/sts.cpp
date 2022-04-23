@@ -90,7 +90,7 @@ int main(){
     for(int i=0;i<200;i++){
         cout << "Simulation step: " << i << endl;
         //Check if a task is ready
-        for(int j=0;i<taskSet.size();i++){
+        for(int j=0;i<taskSet.size();j++){
             if(taskSet[j].a == i){
                 cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
             }

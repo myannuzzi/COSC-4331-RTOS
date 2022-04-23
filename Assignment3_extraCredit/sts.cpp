@@ -92,7 +92,7 @@ int main(){
         //Check if a task is ready
         for(int j=0;i<taskSet.size();i++){
             if(taskSet[j].a == i){
-                cout << "TaskID: " << taskSet[j] << " has arrived!" << endl;
+                cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
             }
         }
     }

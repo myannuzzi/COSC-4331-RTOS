@@ -13,7 +13,7 @@ int main(){
 
     //Run loop for 200 iterations
     for(int i=0;i<200;i++){
-
+        cout << "Simulation step: " << i << endls
     }
     cout << "Program finished. Printing out results..." << endl;
     //Print out results

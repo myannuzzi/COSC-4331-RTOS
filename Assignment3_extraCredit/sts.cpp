@@ -7,6 +7,7 @@
 #include <fstream>
 #include <sstream>
 #include <algorithm>
+#include <queue>
 
 #define MAX_VOLTAGE = 1.0
 
@@ -45,10 +46,15 @@ void sts(int time, vector<task> tasks){
 
 }
 
+// Voltage value
+double v = 0.0;
+
 int main(){
     cout << "Running sts program..." << endl;
     //Create a vector of task structs
     vector<task> taskSet;
+    priority_queue<task> runQueue;
+    vector<task> completedTasks;
     //Read in data file
     ifstream fp("input.txt");
     string line;
@@ -59,7 +65,7 @@ int main(){
     int taskNum = stoi(sub);
     cout << "Number of tasks is: " << taskNum << endl;
     while(getline(fp, line)){
-        cout << line << endl;
+        //cout << line << endl;
         //Parse the line and turn it into a struct
         //Grab the task number
         string sub = line.substr(line.find("k ") + 1);

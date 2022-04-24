@@ -8,6 +8,8 @@
 #include <sstream>
 #include <algorithm>
 
+#define MAX_VOLTAGE = 1.0
+
 using namespace std;
 
 //Sporadic task struct
@@ -23,6 +25,24 @@ struct task{
 //Compare two tasks by their arrival time for sorting
 bool compareByArrivalTime(const task &a, const task &b){
     return a.a < b.a;
+}
+
+//Sts Algorithm
+void sts(int time, vector<task> tasks){
+    cout << "Running sts at time: " << time << endl;
+    //First check if the set is empty, if it is, break
+    if(tasks.size() == 0){
+        cout << "There are no more tasks to run..." << endl;
+        return;
+    }
+    //Compute U_j(t) for all in task set
+
+    //Compute U(t) and find k
+
+    //Schedule only the tasks in [t, D_k] at the proper voltage and remove tasks from the set
+
+    //let t=D_k
+
 }
 
 int main(){
@@ -91,13 +111,16 @@ int main(){
     int i=0;
     while(i<200){
         cout << "Simulation step: " << i << endl;
-        //Check if a task is ready
-        for(int j=0;i<taskSet.size();j++){
-            cout << j << endl;
-            if(taskSet[j].a == i){
-                cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
-            }
-        }
+
+        //Run sts algorithm
+        sts(i, taskSet);
+        // //Check if a task is ready
+        // for(int j=0;i<taskSet.size();j++){
+        //     cout << j << endl;
+        //     if(taskSet[j].a == i){
+        //         cout << "TaskID: " << taskSet[j].taskID << " has arrived!" << endl;
+        //     }
+        // }
         i++;
     }
     cout << "Program finished. Printing out results..." << endl;

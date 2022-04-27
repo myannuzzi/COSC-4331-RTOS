@@ -28,6 +28,12 @@ bool compareByArrivalTime(const task &a, const task &b){
     return a.a < b.a;
 }
 
+//Acceptance test - checks to see if the incoming task is accepted into the task set
+void acceptanceTest(vector<task> taskSet, task newTask, int time){
+    
+
+}
+
 //Sts Algorithm
 void sts(int time, vector<task> tasks){
     cout << "Running sts at time: " << time << endl;

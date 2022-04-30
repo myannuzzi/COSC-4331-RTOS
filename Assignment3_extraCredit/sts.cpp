@@ -38,7 +38,7 @@ void acceptanceTest(vector<task> taskSet, task newTask, int time){
 }
 
 //Sts Algorithm
-void sts(int time, vector<task> tasks, priority_queue<task> runQueue, int &completed){
+void sts(int time, vector<task> &tasks, priority_queue<task> &runQueue, int &completed){
     cout << "Running sts at time: " << time << endl;
     //First check if the set is empty, if it is, break
     if(tasks.size() == 0){
@@ -52,11 +52,11 @@ void sts(int time, vector<task> tasks, priority_queue<task> runQueue, int &compl
             // Run the acceptance test
             int sumRc=0;
             priority_queue<task> copyQueue = runQueue;
-            for(int i=j;j<copyQueue.size();i++){
+            for(int j=0;j<copyQueue.size();i++){
                 sumRc = sumRc + copyQueue.top().rc;
                 copyQueue.pop();
             }
-            double U = sumRc/task[i].d;
+            double U = double(sumRc) / double(task[i].d);
             cout << "New U = " << U << endl;
             if(U>1){
                 cout << "U is greater than 1, task not accepted..." << endl;
@@ -64,7 +64,7 @@ void sts(int time, vector<task> tasks, priority_queue<task> runQueue, int &compl
                 return;
             }else {
                 cout << "Task accepted, setting voltage and inserting into running queue..." << endl;
-                runQueue.insert(task[i], task[i].d);
+                runQueue.push(task[i], task[i].d);
                 runQueue.top().rc--;
                 //I am going to keep my tasks in the vector they are in. As long as the time doesnt reverse (which it wont) those tasks wont be seen again
                 return;
@@ -111,6 +111,7 @@ int main(){
     string sub = line.substr(line.find(":") + 1);
     //cout << sub << endl;
     int taskNum = stoi(sub);
+    int completedTasks=0;
     cout << "Number of tasks is: " << taskNum << endl;
     while(getline(fp, line)){
         //cout << line << endl;
@@ -170,7 +171,7 @@ int main(){
         //cout << "Simulation step: " << i << endl;
 
         //Run sts algorithm
-        sts(i, taskSet);
+        sts(i, taskSet, runQueue,completedTasks);
         // //Check if a task is ready
         // for(int j=0;i<taskSet.size();j++){
         //     cout << j << endl;

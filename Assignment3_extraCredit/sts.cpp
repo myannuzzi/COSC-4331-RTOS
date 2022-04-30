@@ -21,6 +21,7 @@ struct task{
     int a;
     int c;
     int d;
+    int rc;
 };
 
 //Compare two tasks by their arrival time for sorting
@@ -101,6 +102,7 @@ int main(){
         }
         t.a = vals[0];
         t.c = vals[1];
+        t.rc = vals[1];
         t.d = vals[2];
         taskSet.push_back(t);
     }

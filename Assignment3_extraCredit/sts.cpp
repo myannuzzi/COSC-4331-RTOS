@@ -131,7 +131,7 @@ int main(){
     //Run loop for 200 iterations
     int i=0;
     while(i<200){
-        cout << "Simulation step: " << i << endl;
+        //cout << "Simulation step: " << i << endl;
 
         //Run sts algorithm
         sts(i, taskSet);

@@ -43,9 +43,12 @@ void sts(int time, vector<task> tasks){
         return;
     }
     //Compute U_j(t) for all in task set
-    if(tasks[i].a == i){
-        cout << "task starting" << endl;
+    for(int i=0;i<tasks.size();i++){
+        if(tasks[i].a == time){
+            cout << "task starting" << endl;
+        }
     }
+    
     //Compute U(t) and find k
 
     //Schedule only the tasks in [t, D_k] at the proper voltage and remove tasks from the set

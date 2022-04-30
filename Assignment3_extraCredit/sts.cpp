@@ -21,7 +21,8 @@ struct task{
     int a;
     int c;
     int d;
-    int rc;
+    int rc; // equivalent to the computation time - the time the task has been running
+    double voltage;
 };
 
 //Compare two tasks by their arrival time for sorting
@@ -104,6 +105,7 @@ int main(){
         t.c = vals[1];
         t.rc = vals[1];
         t.d = vals[2];
+        t.voltage = 1.0;
         taskSet.push_back(t);
     }
 

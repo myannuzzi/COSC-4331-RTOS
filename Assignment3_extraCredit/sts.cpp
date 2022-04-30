@@ -56,7 +56,7 @@ void sts(int time, vector<task> &tasks, priority_queue<task> &runQueue, int &com
                 sumRc = sumRc + copyQueue.top().rc;
                 copyQueue.pop();
             }
-            double D = double(task[i].d);
+            double D = task[i].d;
             double U = double(sumRc) / D;
             cout << "New U = " << U << endl;
             if(U>1){

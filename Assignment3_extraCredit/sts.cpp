@@ -43,7 +43,7 @@ void sts(int time, vector<task> tasks){
         return;
     }
     //Compute U_j(t) for all in task set
-    if(tasks.a == i){
+    if(tasks[i].a == i){
         cout << "task starting" << endl;
     }
     //Compute U(t) and find k

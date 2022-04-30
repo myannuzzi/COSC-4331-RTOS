@@ -41,32 +41,32 @@ void acceptanceTest(vector<task> taskSet, task newTask, int time){
 void sts(int time, vector<task> *tasks, priority_queue<task> *runQueue, int *completed){
     cout << "Running sts at time: " << time << endl;
     //First check if the set is empty, if it is, break
-    if(tasks.size() == 0){
+    if(tasks->size() == 0){
         cout << "There are no more tasks to run..." << endl;
         return;
     }
     //Compute U_j(t) for all in task set
-    for(int i=0;i<tasks.size();i++){
-        if(tasks[i].a == time){
+    for(int i=0;i<tasks->size();i++){
+        if(tasks[i]->a == time){
             cout << "Event 1: a new task has arrived! Running performance test" << endl;
             // Run the acceptance test
             int sumRc=0;
             priority_queue<task> copyQueue = runQueue;
-            for(int j=0;j<copyQueue.size();i++){
-                sumRc = sumRc + copyQueue.top().rc;
-                copyQueue.pop();
+            for(int j=0;j<copyQueue->size();i++){
+                sumRc = sumRc + copyQueue->top().rc;
+                copyQueue->pop();
             }
-            double D = tasks[i].d;
+            double D = tasks[i]->d;
             double U = double(sumRc) / D;
             cout << "New U = " << U << endl;
             if(U>1){
                 cout << "U is greater than 1, task not accepted..." << endl;
-                runQueue.top().rc--;
+                runQueue->top().rc--;
                 return;
             }else {
                 cout << "Task accepted, setting voltage and inserting into running queue..." << endl;
-                runQueue.push(tasks[i], tasks[i].d);
-                runQueue.top().rc--;
+                runQueue->push(tasks[i], tasks[i].d);
+                runQueue->top().rc--;
                 //I am going to keep my tasks in the vector they are in. As long as the time doesnt reverse (which it wont) those tasks wont be seen again
                 return;
             }
@@ -77,11 +77,11 @@ void sts(int time, vector<task> *tasks, priority_queue<task> *runQueue, int *com
         //let t=D_k
 
     }
-    if(runQueue.top().rc == 0){
+    if(runQueue->top().rc == 0){
         //Event has completed execution
         cout << "Event 2: A task has completed! Removing it from running queue" << endl;\
         //Remove the first element of the queue
-        runQueue.pop();
+        runQueue->pop();
         //increase the completed task count
         completed++;
         return;
@@ -89,7 +89,7 @@ void sts(int time, vector<task> *tasks, priority_queue<task> *runQueue, int *com
         //The current task is not done running
         //Decrease the remaining computation time by 1
         cout << "Task processing..." << endl;
-        runQueue.top().rc--;
+        runQueue->top().rc--;
 
     }
     

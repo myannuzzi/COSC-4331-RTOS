@@ -116,6 +116,7 @@ int main(){
         cout << "a: " << taskSet[i].a << endl;
         cout << "c: " << taskSet[i].c << endl;
         cout << "d: " << taskSet[i].d << endl; 
+        cout << "rc: " << taskSet[i].rc << endl;
     }
     //Sort the task list
     sort(taskSet.begin(), taskSet.end(), compareByArrivalTime);

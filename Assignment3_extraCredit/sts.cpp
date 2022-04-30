@@ -10,6 +10,7 @@
 #include <queue>
 
 #define MAX_VOLTAGE = 1.0
+#define VT = 0.8
 
 using namespace std;
 
@@ -37,7 +38,7 @@ void acceptanceTest(vector<task> taskSet, task newTask, int time){
 }
 
 //Sts Algorithm
-void sts(int time, vector<task> tasks){
+void sts(int time, vector<task> tasks, priority_queue<task> runQueue, int &completed){
     cout << "Running sts at time: " << time << endl;
     //First check if the set is empty, if it is, break
     if(tasks.size() == 0){
@@ -47,16 +48,25 @@ void sts(int time, vector<task> tasks){
     //Compute U_j(t) for all in task set
     for(int i=0;i<tasks.size();i++){
         if(tasks[i].a == time){
-            cout << "task starting" << endl;
+            cout << "Event 1: a new task has arrived! Running performance test" << endl;
         }
+        //Compute U(t) and find k
+
+        //Schedule only the tasks in [t, D_k] at the proper voltage and remove tasks from the set
+
+        //let t=D_k
+
+    }
+    if(runQueue.top().rc == 0){
+        //Event has completed execution
+        cout << "Event 2: A task has completed! Removing it from running queue" << endl;\
+        //Remove the first element of the queue
+        runQueue.pop();
+        //increase the completed task count
+        completed++;
+        return;
     }
     
-    //Compute U(t) and find k
-
-    //Schedule only the tasks in [t, D_k] at the proper voltage and remove tasks from the set
-
-    //let t=D_k
-
 }
 
 // Voltage value

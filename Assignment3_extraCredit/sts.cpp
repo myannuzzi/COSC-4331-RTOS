@@ -65,6 +65,12 @@ void sts(int time, vector<task> tasks, priority_queue<task> runQueue, int &compl
         //increase the completed task count
         completed++;
         return;
+    }else {
+        //The current task is not done running
+        //Decrease the remaining computation time by 1
+        cout << "Task processing..." << endl;
+        runQueue.top().rc--;
+
     }
     
 }

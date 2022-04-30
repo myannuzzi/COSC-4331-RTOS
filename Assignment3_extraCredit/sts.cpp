@@ -49,8 +49,27 @@ void sts(int time, vector<task> tasks, priority_queue<task> runQueue, int &compl
     for(int i=0;i<tasks.size();i++){
         if(tasks[i].a == time){
             cout << "Event 1: a new task has arrived! Running performance test" << endl;
+            // Run the acceptance test
+            int sumRc=0;
+            priority_queue<task> copyQueue = runQueue;
+            for(int i=j;j<copyQueue.size();i++){
+                sumRc = sumRc + copyQueue.top().rc;
+                copyQueue.pop();
+            }
+            double U = sumRc/task[i].d;
+            cout << "New U = " << U << endl;
+            if(U>1){
+                cout << "U is greater than 1, task not accepted..." << endl;
+                runQueue.top().rc--;
+                return;
+            }else {
+                cout << "Task accepted, setting voltage and inserting into running queue..." << endl;
+                runQueue.insert(task[i], task[i].d);
+                runQueue.top().rc--;
+                //I am going to keep my tasks in the vector they are in. As long as the time doesnt reverse (which it wont) those tasks wont be seen again
+                return;
+            }
         }
-        //Compute U(t) and find k
 
         //Schedule only the tasks in [t, D_k] at the proper voltage and remove tasks from the set
 

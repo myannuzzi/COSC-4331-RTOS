@@ -56,7 +56,7 @@ void sts(int time, vector<task> &tasks, priority_queue<task> &runQueue, int &com
                 sumRc = sumRc + copyQueue.top().rc;
                 copyQueue.pop();
             }
-            double D = task[i].d;
+            double D = tasks[i].d;
             double U = double(sumRc) / D;
             cout << "New U = " << U << endl;
             if(U>1){
@@ -65,7 +65,7 @@ void sts(int time, vector<task> &tasks, priority_queue<task> &runQueue, int &com
                 return;
             }else {
                 cout << "Task accepted, setting voltage and inserting into running queue..." << endl;
-                runQueue.push(task[i], task[i].d);
+                runQueue.push(tasks[i], tasks[i].d);
                 runQueue.top().rc--;
                 //I am going to keep my tasks in the vector they are in. As long as the time doesnt reverse (which it wont) those tasks wont be seen again
                 return;

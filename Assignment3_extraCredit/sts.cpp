@@ -56,7 +56,8 @@ void sts(int time, vector<task> &tasks, priority_queue<task> &runQueue, int &com
                 sumRc = sumRc + copyQueue.top().rc;
                 copyQueue.pop();
             }
-            double U = double(sumRc) / double(task[i].d);
+            double D = double(task[i].d);
+            double U = double(sumRc) / D;
             cout << "New U = " << U << endl;
             if(U>1){
                 cout << "U is greater than 1, task not accepted..." << endl;

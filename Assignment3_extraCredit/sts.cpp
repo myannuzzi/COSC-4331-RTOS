@@ -38,7 +38,7 @@ void acceptanceTest(vector<task> taskSet, task newTask, int time){
 }
 
 //Sts Algorithm
-void sts(int time, vector<task> &tasks, priority_queue<task> &runQueue, int &completed){
+void sts(int time, vector<task> *tasks, priority_queue<task> *runQueue, int *completed){
     cout << "Running sts at time: " << time << endl;
     //First check if the set is empty, if it is, break
     if(tasks.size() == 0){
